@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShavaSpop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+<header>
+    <button id="cart-button" class="cart-icon"><i class="fas fa-shopping-cart"></i></button>
+    <nav>
+        <ul>
+            <li><a href="#main">Главная</a></li>
+            <li><a href="#catalog">Каталог</a></li>
+            <li><a href="#contacts">Контакты</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section id="main" class="bg-cover bg-center animated fadeIn">
+        <div class="hero py-20 text-white text-center">
+        </div>
+    </section>
+
+
+
+    <section id="catalog">
+        <h2>Каталог товаров</h2>
+        <div class="product-container">
+            <div class="product">
+                <img src="img.png" alt="Шаурма с курицей">
+                <p>Шаурма с курицей</p>
+                <p>Цена: 200 рублей</p>
+                <button class="preorder-btn" data-product="Шаурма с курицей" data-price="200">Предзаказ</button>
+            </div>
+            <div class="product">
+                <img src="img.png" alt="Шаурма с курицей">
+                <p>Шаурма с курицей</p>
+                <p>Цена: 200 рублей</p>
+                <button class="preorder-btn" data-product="Шаурма с курицей" data-price="200">Предзаказ</button>
+            </div>
+            <div class="product">
+                <img src="img.png" alt="Шаурма с курицей">
+                <p>Шаурма с курицей</p>
+                <p>Цена: 200 рублей</p>
+                <button class="preorder-btn" data-product="Шаурма с курицей" data-price="200">Предзаказ</button>
+            </div>
+            <div class="product">
+                <img src="img.png" alt="Шаурма с курицей">
+                <p>Шаурма с курицей</p>
+                <p>Цена: 180 рублей</p>
+                <button class="preorder-btn" data-product="Шаурма с курицей" data-price="180">Предзаказ</button>
+            </div>
+            <div class="product">
+                <img src="img.png" alt="Шаурма с курицей">
+                <p>Шаурма с курицей</p>
+                <p>Цена: 170 рублей</p>
+                <button class="preorder-btn" data-product="Шаурма с курицей" data-price="170">Предзаказ</button>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Меню корзины -->
+    <section id="cart-menu" class="hidden">
+        <h2>Корзина</h2>
+        <div id="cart-items"></div>
+        <p id="total-amount">Итого: 0 рублей</p>
+        <label for="customer-name">Ваше имя:</label>
+        <input type="text" id="customer-name" required>
+        <label for="delivery-time">Время доставки:</label>
+        <input type="text" id="delivery-time" required>
+        <button id="checkout-btn">Оформить заказ</button>
+    </section>
+
+    <section id="contacts">
+        <h2>Контакты</h2>
+        <p>Телефон: +7 123-456-789</p>
+        <p>Адрес: Panjakent Firdavsi Aminov building</p>
+    </section>
+</main>
+
+<footer>
+    <p>Все права защищены © Моя Шаурма</p>
+</footer>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

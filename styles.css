@@ -1,0 +1,342 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: #ffffff;
+}
+header {
+    background-color: rgba(0, 0, 0, 0.75);
+    padding: 32px;
+    margin-bottom: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999; /* Устанавливаем z-index, чтобы хедер был поверх остального контента */
+}
+.bg-cover {
+    background-image: url('img.png');
+    background-size: contain; /* Изменяем размер, чтобы изображение вмещалось в контейнер */
+    background-repeat: no-repeat; /* Запрещаем повторение фонового изображения */
+    background-position: center center; /* Центрируем изображение */
+    max-height: 300px; /* Максимальная высота блока .bg-cover */
+    /* Другие свойства */
+}
+
+.bg-cover img {
+    max-width: 100%; /* Ограничиваем максимальную ширину до 100% ширины контейнера */
+    max-height: 100%; /* Ограничиваем максимальную высоту до 100% высоты блока .bg-cover */
+    display: block; /* Гарантируем правильное отображение как блочного элемента */
+    margin: 0 auto; /* Центрируем изображение по горизонтали */
+}
+
+nav {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1;
+}
+
+nav ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+nav ul li a{
+    color: white;
+}
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+#main {
+    text-align: center;
+    padding: 50px;
+    height: 100vh; /* Заполнение всей высоты экрана */
+}
+.bg-cover {
+    background-size: cover; /* Растягивание картинки на весь фон */
+}
+
+.bg-center {
+    background-position: center; /* Центрирование фона */
+}
+.hero {
+    position: relative;
+    max-width: 100%; /* Установите максимальную ширину блока .hero */
+    overflow: hidden; /* Скрыть текст, выходящий за пределы блока .hero */
+}
+
+.hero img {
+    width: 100%; /* 100% ширина относительно родительского контейнера */
+    height: auto; /* Автоматический размер по высоте */
+    max-width: none; /* Удаляем ограничение по максимальной ширине */
+    max-height: 500px; /* Максимальная высота картинки */
+}
+
+
+#catalog {
+    background-color: #00653d;
+    padding: 15px;
+    text-align: center;
+}
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Равномерно распределяем контейнеры по ширине родительского элемента */
+    margin-top: 15px;
+}
+
+.product img {
+    width: 100%; /* Изображение займет всю ширину блока */
+    height: auto; /* Подстраивается под высоту блока автоматически */
+    border-radius: 15px; /* Округление углов */
+}
+/* Базовые стили товара */
+/* Базовые стили товара */
+.product {
+    flex-basis: calc(50% - 10px); /* По умолчанию показываем по два товара в одной строке на мобильных устройствах */
+    margin-bottom: 5px;
+    padding: 5px;
+    box-sizing: border-box;
+    text-align: center;
+    min-width: 10px;
+    max-width: 200px;
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 15px;
+}
+
+/* Адаптация для планшетов */
+@media (min-width: 768px) {
+    .product {
+        flex-basis: calc(33.3333% - 10px); /* Показываем по три товара в одной строке на планшетах */
+    }
+}
+
+/* Адаптация для пк */
+@media (min-width: 1024px) {
+    .product {
+        flex-basis: calc(25% - 10px); /* Показываем по четыре товара в одной строке на компьютерах */
+    }
+}
+
+
+
+
+.product h3 {
+    margin-top: 2px;
+}
+
+.order-btn,
+.preorder-btn {
+    display: inline-block; /* Сделать кнопку блочным элементом */
+    padding: 8px 16px; /* Подобрать подходящий отступ */
+    margin-top: 10px; /* Отступ сверху */
+    border: 1px solid black; /* Рамка вокруг кнопки */
+    border-radius: 15px; /* Закругленные углы */
+    background-color: #00653d; /* Прозрачный фон */
+    color: #ffffff; /* Цвет текста */
+    cursor: pointer; /* Изменить вид курсора при наведении */
+    transition: background-color 0.3s, color 0.3s; /* Плавное изменение цвета при наведении */
+}
+
+.preorder-btn:hover {
+    background-color: rgba(0, 0, 0, 0.75); /* Изменение цвета фона при наведении */
+    color: #ffffff; /* Изменение цвета текста при наведении */
+}
+
+
+
+#cart-menu {
+    position: fixed;
+    font-size: 12px;
+    top: 60px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.75); /* Тёмно-серый фон для меню корзины */
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+#cart-menu.hidden {
+    display: none;
+}
+
+#cart-items {
+    max-height: 170px;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+}
+#cart-items::-webkit-scrollbar {
+    width: 6px; /* ширина полосы прокрутки */
+}
+
+#cart-items::-webkit-scrollbar-track {
+    background-color:rgba(0, 0, 0, 0.001); /* цвет фона трека */
+}
+
+#cart-items::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.75); /* цвет полосы прокрутки */
+    border-radius: 6px; /* закругленные углы полосы прокрутки */
+}
+
+#cart-items::-webkit-scrollbar-thumb:hover {
+    background-color: darkred; /* измененный цвет полосы при наведении */
+}
+
+/* Пример стилей для кнопки удаления */
+button.delete-button {
+    color: darkred;
+    background-color: rgba(0, 0, 0, 0.75);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button.delete-button:hover {
+    background-color: darkred;
+    color: rgba(0, 0, 0, 0.75);
+}
+
+.container::-webkit-scrollbar-thumb {
+    background-color: black; /* Цвет полосы скролла */
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.cart-item img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+#total-amount {
+    font-weight: bold;
+}
+
+/* Новые стили для раздела корзины */
+#cart-menu {
+    /* Оставляем остальные стили без изменений */
+    top: 80px; /* Сдвигаем вниз для учета имени заведения */
+    background-color: rgba(0, 0, 0, 0.75); /* Темно-серый фон */
+    padding: 20px;
+    border-radius: 15px;
+}
+
+/* Новые стили для полей ввода в разделе "cart-menu" */
+#cart-menu input[type="text"] {
+    display: block;
+    margin: 10px 0;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 15px;
+    width: 90%;
+    background-color: rgba(0, 0, 0, 0.75); /* Более темный оттенок для поля ввода */
+    color: #ffffff; /* Белый текст */
+    font-size: 16px;
+}
+
+/* Новые стили для меток полей ввода */
+#cart-menu label {
+    display: block;
+    margin-bottom: 5px;
+    color: #ffffff; /* Белый текст */
+}
+
+/* Новые стили для кнопки "Оформить заказ" */
+#checkout-btn {
+    background-color: #00653d; /* Тёмно-оранжевый */
+    color: #ffffff; /* Белый текст */
+    border: none;
+    border-radius: 15px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+#checkout-btn:hover {
+    background-color: rgba(0, 0, 0, 0.75); /* Изменение цвета фона при наведении */
+    color: #ffffff; /* Изменение цвета текста при наведении */
+}
+
+/* Переместите код выше в конец файла style.css */
+
+
+footer {
+    background-color: rgba(0, 0, 0, 0.75); /* Тёмно-серый фон подвала */
+    color: #ffffff; /* Белый текст в подвале */
+    justify-content: space-between;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Новые стили для кнопки "Корзина" */
+#cart-button {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    font-size: 18px;
+    padding: 10px 15px;
+    position: absolute;
+    top: 13px;
+    right: 13px;
+    z-index: 1;
+}
+
+
+/* Новые стили для раздела контактов */
+#contacts {
+    text-align: center;
+    margin-top: 50px; /* Сдвигаем раздел "contacts" ниже картинки */
+    background-color: rgba(0, 0, 0, 0.75);
+
+}
+.cart-icon {
+    /* Добавьте стили для кнопки, если нужно */
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #ffffff; /* Цвет значка */
+    cursor: pointer;
+}
+
+
+/* Новые стили для секции "catalog" */
+#catalog {
+    padding: 50px; /* Увеличим отступы для увеличения размеров секции */
+    text-align: center;
+}
+
+/* Новые стили для раздела корзины */
+#cart-menu {
+    /* Оставляем остальные стили без изменений */
+    top: 80px; /* Сдвигаем вниз для учета имени заведения */
+}
+#main {
+    position: relative; /* Позиционирование для заднего фона */
+    min-height: 400px; /* Увеличим минимальную высоту раздела "main" */
+}
+#main::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);}

@@ -1,0 +1,17 @@
+{
+  "name": "AminovMarket",
+  "short_name": "Market",
+  "description": "Shop Shava",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "black",
+  "theme_color": "#000000",
+  "color": "#fff",
+  "icons": [
+    {
+      "src": "img.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
